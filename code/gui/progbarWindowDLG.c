@@ -1,4 +1,4 @@
-/*********************************************************************
+ï»¿/*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
@@ -54,7 +54,7 @@
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "progbarWindow", ID_WINDOW_0, 70, 34, 100, 60, 0, 0x0, 0 },
   { PROGBAR_CreateIndirect, "Progbar", ID_PROGBAR_0, 0, 0, 100, 20, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "³õÊ¼»¯", ID_TEXT_0, 0, 23, 100, 35, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "é’æ¿†îé–?, ID_TEXT_0, 0, 23, 100, 35, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };
@@ -67,6 +67,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 */
 
 // USER START (Optionally insert additional static code)
+extern GUI_CONST_STORAGE GUI_FONT GUI_Fontfansong16;
 // USER END
 
 /*********************************************************************
@@ -82,19 +83,15 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
   switch (pMsg->MsgId) {
   case WM_INIT_DIALOG:
     //
-    // Initialization of '³õÊ¼»¯'
+    // Initialization of 'é’æ¿†îé–?
     //
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
-    TEXT_SetFont(hItem, GUI_FONT_13_1);
+	TEXT_SetFont(hItem,&GUI_Fontfansong16);
     TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
     // USER START (Optionally insert additional code for further widget initialization)
-	
     // USER END
     break;
   // USER START (Optionally insert additional message handling)
-  case WM_KEY:
-	  printf("\r\nwm_key");
-	  break;
   // USER END
   default:
     WM_DefaultProc(pMsg);

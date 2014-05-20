@@ -81,19 +81,19 @@ void ProcessKeyMsg (void)
 		if(vk_msg == VK_ENTER){
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_ENTER, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}else if(vk_msg == VK_BACK){
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_BACKSPACE, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}else if(vk_msg == VK_DOWN){
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_TAB, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}else if(vk_msg == VK_UP){
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_BACKTAB, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}else if(vk_msg == (VK_ENTER|VK_LOOSE)){		
 		ent_cnt=0;
 		//GUI_SendKeyMsg(GUI_KEY_ENTER, 0);
@@ -112,16 +112,16 @@ void ProcessKeyMsg (void)
 		}
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_ENTER, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}else if(vk_msg == (VK_BACK|VK_CONT)){
 	}else if(vk_msg == (VK_DOWN|VK_CONT)){
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_TAB, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}else if(vk_msg == (VK_UP|VK_CONT)){
 		BSP_BeepKeyDelay ();
 		GUI_SendKeyMsg(GUI_KEY_BACKTAB, 1);
-		GUI_Exec();
+		GUI_Exec1();
 	}
 }
 int main( void )				 
@@ -143,7 +143,7 @@ int main( void )
 		}
 		if(jif_exec < jiffies){
 			jif_exec = jiffies + 1;
-			GUI_Exec();			
+			GUI_Exec();
 		}
 	}
 }

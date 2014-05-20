@@ -1,4 +1,4 @@
-#define __BSP_USART_C__
+ï»¿#define __BSP_USART_C__
 #include "stm32f10x.h"
 #include "bsp_usart.h"
 #include <stdio.h>
@@ -46,7 +46,7 @@ static void GPIO_Configuration(void)
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 /*
-@brief  ²É¼¯°åºÍÏÔÊ¾¿ØÖÆ°åÍ¨ĞÅ½Ó¿Ú.
+@brief  é‡‡é›†æ¿å’Œæ˜¾ç¤ºæ§åˆ¶æ¿é€šä¿¡æ¥å£.
 @param  None.
 @retval None.
 */
@@ -97,15 +97,15 @@ int fputc(int ch, FILE *f)
 }
 
 /*******************************************************************************
-	o¡¥¨ºy??¡êofputc
-	¨º?  ¨¨?:
-	¨º?  3?:
-	1|?¨¹?¦Ì?¡Â¡êo
-	???¡§¨°?getco¡¥¨ºy¡ê??a?¨´?¨¦¨°?¨º1¨®?scanffo¡¥¨ºy¡ä¨®¡ä??¨²1¨º?¨¨?¨ºy?Y
+	oË‰Ãªy??ï¿¡ofputc
+	Ãª?  Ã¨?:
+	Ãª?  3?:
+	1|?Ã¼?Î¼?Ã·ï¿¡o
+	???Â¨Ã²?getcoË‰Ãªyï¿¡??a?Ã¹?Ã©Ã²?Ãª1Ã³?scanffoË‰Ãªyâ€²Ã³â€²??Ãº1Ãª?Ã¨?Ãªy?Y
 *********************************************************************************/
 int fgetc(FILE *f)
 {
-	/* ¦Ì¨¨¡äy¡ä??¨²1¨º?¨¨?¨ºy?Y */
+	/* Î¼Ã¨â€²yâ€²??Ãº1Ãª?Ã¨?Ãªy?Y */
 	while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET)
 	{}
 

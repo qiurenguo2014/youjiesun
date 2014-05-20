@@ -1,4 +1,4 @@
-/*********************************************************************
+Ôªø/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -114,9 +114,9 @@ void LCD_X_8080_16_Init(void) {
 //   LCD_DELAY(5);
 //   LCD_SET_DIR_OUT();
 }
-#define LCD_BASE_emwin					0X60000000//ª˘µÿ÷∑
-#define LCD_REG_ADDRESS					*(volatile U16*)LCD_BASE_emwin		//LCDºƒ¥Ê∆˜µÿ÷∑
-#define LCD_RAM_ADDRESS					*(volatile U16*)(LCD_BASE_emwin + 0x40000)	//LCD RAMµÿ÷∑
+#define LCD_BASE_emwin					0X60000000//Âü∫Âú∞ÂùÄ
+#define LCD_REG_ADDRESS					*(volatile U16*)LCD_BASE_emwin		//LCDÂØÑÂ≠òÂô®Âú∞ÂùÄ
+#define LCD_RAM_ADDRESS					*(volatile U16*)(LCD_BASE_emwin + 0x40000)	//LCD RAMÂú∞ÂùÄ
 /*********************************************************************
 *
 *       LCD_X_8080_16_Write00_16

@@ -3,8 +3,8 @@
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
 #    HomePage: Allen
-#       Brief: 31K以上保存系统相关数据和初始化数据
-				0~31K保存测试数据
+#       Brief: 31K浠ヤ笂淇濆瓨绯荤粺鐩稿叧鏁版嵁鍜屽垵濮嫔寲鏁版嵁
+				0~31K淇濆瓨娴嬭瘯鏁版嵁
 #  LastChange: 2014-05-10 09:26:34
 *************************************************************************/
 /* Includes ------------------------------------------------------------*/
@@ -32,7 +32,7 @@ void _fd_printfhisdata(void)
 	printf("\r\n--------------------");
 }
 /*
-@brief  矫正历史测试数据.
+@brief  鐭铡嗗彶娴嬭瘯鏁版嵁.
 @param  None.
 @retval None.
 */
@@ -58,7 +58,7 @@ void FD_AdjustHistoryData (void)
 	}
 }
 /*
-@brief  保存历史测试数据参数.
+@brief  淇濆瓨铡嗗彶娴嬭瘯鏁版嵁鍙傛暟.
 @param  None.
 @retval None.
 */
@@ -73,7 +73,7 @@ void FD_GetHistoryData (void)
 	FM31256_WriteFlashDataSuint (FLASH_ADDR_SYSTEST, (uint32_t*)&hisdata.jiezhisunhao,sizeof(hisdata));
 }
 /*
-@brief  按键调用 按下后对应历史数据状态改变.
+@brief  鎸夐敭璋幂敤 鎸変笅鍚庡搴斿巻鍙叉暟鎹姸镐佹敼鍙?
 @param  None.
 @retval None.
 */
@@ -111,7 +111,7 @@ void FD_GetHisdataStr_jiezhisunhao (char *str)
 {
 	switch(hisdata.jiezhisunhao){
 		case AC_0V:
-			strcpy(str,"关");
+			strcpy(str,"关闭");
 			break;
 		case AC_600V:
 			strcpy(str,"600V");
@@ -175,7 +175,7 @@ void FD_GetHisdataStr_jiezhisunhao (char *str)
 			break;
 		default:
 			hisdata.jiezhisunhao = 0;
-			strcpy(str,"关");
+			strcpy(str,"关闭");
 			break;
 	}
 }
@@ -210,7 +210,7 @@ void FD_GetHisdataStr_tijidianzu (char *str)
 {
 	switch(hisdata.tijidianzu){
 		case DC_OFF:
-			strcpy(str,"关");
+			strcpy(str,"关闭");
 			break;
 		case DC_300V:
 			strcpy(str,"300V");
@@ -226,7 +226,7 @@ void FD_GetHisdataStr_tijidianzu (char *str)
 			break;
 		default:
 			hisdata.tijidianzu = DC_OFF;
-			strcpy(str,"关");
+			strcpy(str,"关闭");
 			break;
 	}
 }
@@ -234,7 +234,7 @@ void FD_GetHisdataStr_jiareqidong (char *str)
 {
 	switch(hisdata.jiareqidong){
 		case TM_OFF:
-			strcpy(str,"关");
+			strcpy(str,"关闭");
 			break;
 		case TM_50C:
 			strcpy(str,"50℃");
@@ -289,7 +289,7 @@ void FD_GetHisdataStr_jiareqidong (char *str)
 			break;
 		default:
 			hisdata.jiareqidong = TM_OFF;
-			strcpy(str,"关");
+			strcpy(str,"关闭");
 			break;
 	}
 }
@@ -320,14 +320,14 @@ void FD_GetHisdataStr_ceshifangsi (char *str)
 void FD_GetHisdataStr_kongbeidianrong (char *str)
 {
 	sprintf(str,"空杯电容 \n%5.2fpf",hisdata.kongbeidianrong/100.0);
-	//strcpy(str,"空杯电容 \n%fpf",hisdata.kongbeidianrong);
+	//strcpy(str,"绌烘澂鐢靛 \n%fpf",hisdata.kongbeidianrong);
 // 	switch(hisdata.kongbeidianrong){
 // 		case 0:
-// 			strcpy(str,"空杯电容 \n120.85pf");
+// 			strcpy(str,"绌烘澂鐢靛 \n120.85pf");
 // 			break;
 // 		default:
 // 			hisdata.kongbeidianrong = 0;
-// 			strcpy(str,"空杯电容 \n120.85pf"); 
+// 			strcpy(str,"绌烘澂鐢靛 \n120.85pf"); 
 // 			break;
 // 	}
 }
@@ -337,10 +337,10 @@ void FD_AdjustModifyData (void)
 		modify.ac_k = 1;
 	}
 }
-/*获取修正系数数据*/
+/*获得修正系数*/
 void FD_GetModifyData(void)
 {
-	uint16_t offset;//偏移量
+	uint16_t offset;
 	offset = sizeof(hisdata);
 	FM31256_ReadFlashDataSuint (FLASH_ADDR_SYSTEST+offset, (uint32_t*)&modify.ac_k, sizeof(modify));
 	FD_AdjustModifyData ();
@@ -349,12 +349,12 @@ void FD_GetModifyData(void)
 }
 void FD_SetModifyData (void)
 {
-	uint16_t offset;//偏移量
+	uint16_t offset;//偏移
 	offset = sizeof(hisdata);
 	FM31256_WriteFlashDataSuint (FLASH_ADDR_SYSTEST+offset, (uint32_t*)&modify.ac_k,sizeof(modify));
 }
 /*
-@brief  内存初始化 检测是否第一次启动 获取油样测试出师值存入数组中.
+@brief  .
 @param  None.
 @retval None.
 */

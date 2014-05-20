@@ -1,4 +1,4 @@
-/*********************************************************************
+Ôªø/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -309,10 +309,10 @@ static void _cbCallback(WM_MESSAGE * pMsg) {
   switch (pMsg->MsgId) {
     case WM_INIT_DIALOG:
       LISTBOX_SetText(hListBox, _ListBox);
-      LISTBOX_AddString(hListBox, "FranÁais");
+      LISTBOX_AddString(hListBox, "FranÈè∞is");
       LISTBOX_AddString(hListBox, "Japanese");
       LISTBOX_AddString(hListBox, "Italiano");
-      LISTBOX_AddString(hListBox, "EspaÒol");
+      LISTBOX_AddString(hListBox, "EspaÈßâl");
       LISTBOX_AddString(hListBox, "Greek");
       LISTBOX_AddString(hListBox, "Hebrew");
       LISTBOX_AddString(hListBox, "Dutch");

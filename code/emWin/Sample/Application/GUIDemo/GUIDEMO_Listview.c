@@ -1,4 +1,4 @@
-/*********************************************************************
+﻿/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -108,7 +108,7 @@ static const char * _pNames[] = {
   "Gunilla", "Hanka", "Heinke", "Helmar", "Henner", "Hennes", "Henrieke", "Immo",
   "India", "Isalie", "Iven", "Jade", "Janice", "Janika", "Janka", "Janneke", "Jannika",
   "Jano", "Jarla", "Jarne", "Jarno", "Jaromir", "Jaron", "Jelana", "Jesper", "Joleen", "Jolie",
-  "Jonte", "Joost", "J�rdis", "Joris", "Josie", "Josina", "Jula", "Julina", "Jytte", "Kalle",
+  "Jonte", "Joost", "J鰎dis", "Joris", "Josie", "Josina", "Jula", "Julina", "Jytte", "Kalle",
   "Kennet", "Keno", "Kiana", "Kieran", "Laila", "Laureen", "Laurens", "Laurent",
   "Lauritz", "Leana", "Leandra", "Leandro", "Len", "Lenore", "Leona", "Leonore",
   "Levke", "Lewin", "Lientje", "Lilith", "Line", "Linna", "Linnea", "Lisanne", "Livia",

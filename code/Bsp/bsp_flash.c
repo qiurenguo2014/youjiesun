@@ -1,4 +1,4 @@
-/*************************************************************************
+ï»¿/*************************************************************************
 #    FileName: bsp_flash.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -63,12 +63,12 @@ unsigned char FL_programDatas (uint8_t *pData, uint32_t offset, uint32_t length)
         	return 0;
         }
         else {
-        	// Ğ´ÈëÊı¾İ×¼È·ĞÔĞ£Ñé
+        	// å†™å…¥æ•°æ®å‡†ç¡®æ€§æ ¡éªŒ
         	unsigned char checkNum;
         	checkNum = *(uint8_t*)(BANK1_WRITE_START_ADDR + offset);
         	if (*pData != checkNum) {
                 FLASH_Lock();
-        		return 0;		//Êı¾İ³ö´í
+        		return 0;		//æ•°æ®å‡ºé”™
         	}
         	else {
         		offset ++;

@@ -1,4 +1,4 @@
-/*************************************************************************
+Ôªø/*************************************************************************
 #    FileName: bps_gpio.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -84,7 +84,7 @@ void RL_nActive_RELAY2 (void)
 {
 	GPIO_WriteBit (RL_RELAY2, RL_RELAY2_Pin, Bit_RESET);
 }
-/*TDA7396 ‰≥ˆºÃµÁ∆˜ ∂Ø◊˜£¨”Î2000V±‰—π∆˜*/
+/*TDA7396ËæìÂá∫ÁªßÁîµÂô® Âä®‰ΩúÔºå‰∏é2000VÂèòÂéãÂô®*/
 void RL_Active_HACRELAY (void)
 {
 	GPIO_WriteBit (RL_HACRELAY, RL_HACRELAY_Pin, Bit_SET);
@@ -93,7 +93,7 @@ void RL_nActive_HACRELAY (void)
 {
 	GPIO_WriteBit (RL_HACRELAY, RL_HACRELAY_Pin, Bit_RESET);
 }
-/*”Õ*/
+/*Ê≤π*/
 void RL_Active_OILRELAY (void)
 {
 	GPIO_WriteBit (RL_OILRELAY, RL_OILRELAY_Pin, Bit_SET);
@@ -102,7 +102,7 @@ void RL_nActive_OILRELAY (void)
 {
 	GPIO_WriteBit (RL_OILRELAY, RL_OILRELAY_Pin, Bit_RESET);
 }
-/*¥≈*/
+/*Á£Å*/
 void RL_Active_CHIRELAY (void)
 {
 	GPIO_WriteBit (RL_CHIRELAY, RL_CHIRELAY_Pin, Bit_SET);
@@ -111,7 +111,7 @@ void RL_nActive_CHIRELAY (void)
 {
 	GPIO_WriteBit (RL_CHIRELAY, RL_CHIRELAY_Pin, Bit_RESET);
 }
-/* º”»» */
+/* Âä†ÁÉ≠ */
 void RL_Active_HOTPOWER (void)
 {
 	GPIO_WriteBit (RL_HOTPOWER, RL_HOTPOWER_Pin, Bit_SET);

@@ -80,7 +80,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { TEXT_CreateIndirect, "介电  常数=", ID_TEXT_4, 5, 48, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "直流  电压=", ID_TEXT_5, 5, 64, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "体积电阻率=", ID_TEXT_6, 5, 80, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "油      温=", ID_TEXT_7, 5, 96, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "  油  温  =", ID_TEXT_7, 5, 96, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_8, 96, 0, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_9, 96, 16, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_10, 96, 32, 88, 16, 0, 0x0, 0 },
@@ -113,7 +113,6 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
   int     Id;
   // USER START (Optionally insert additional variables)
   // USER END
-
   switch (pMsg->MsgId) {
   case WM_INIT_DIALOG:
     //
@@ -164,7 +163,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by '上一个'
+    case ID_BUTTON_0: // Notifications sent by '涓娄竴涓?
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -178,7 +177,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_1: // Notifications sent by '下一个'
+    case ID_BUTTON_1: // Notifications sent by '涓嬩竴涓?
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)

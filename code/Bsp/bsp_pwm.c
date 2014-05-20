@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: bsp_pwm.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -16,7 +16,7 @@
 /* Functions prototypes ------------------------------------------------*/
 /* Functions -----------------------------------------------------------*/
 /*
-@brief  采集频率 温度使用.
+@brief  閲囬泦棰戠巼 娓╁害浣跨敤.
 @param  None.
 @retval None.
 */
@@ -34,11 +34,11 @@ void PWM_Configuration (void)
 	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IN_FLOATING; 
 	GPIO_Init(GPIOA,&GPIO_InitStructure);
 	
- 	TIM_TimeBaseStructure.TIM_Period = 0xffff;     //周期0～FFFF
- 	TIM_TimeBaseStructure.TIM_Prescaler = 499;       //时钟分频 499+1
- 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;   //时钟分割
- 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//模式
- 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);//基本初始化	
+ 	TIM_TimeBaseStructure.TIM_Period = 0xffff;     //锻ㄦ湡0锝濬FFF
+ 	TIM_TimeBaseStructure.TIM_Prescaler = 499;       //镞堕挓鍒嗛 499+1
+ 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;   //镞堕挓鍒嗗壊
+ 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//妯″纺
+ 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);//鍩烘湰鍒濆鍖?
 	
 	TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;
 	TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;
@@ -56,13 +56,13 @@ void PWM_Configuration (void)
 	/* TIM enable counter */
 	TIM_Cmd(TIM3, ENABLE);
 }
-/* 频率计算: 72000000.0/500(分频值 499+1)/value */
+/* 棰戠巼璁＄畻: 72000000.0/500(鍒嗛链?499+1)/value */
 uint16_t PWM_GetInputValue (void)
 {
 	return TIM_GetCapture2 (TIM3);
 }
 /*
-@brief  指示灯PWM.
+@brief  鎸囩ず鐏疨WM.
 @param  None.
 @retval None.
 */
@@ -126,7 +126,7 @@ void PWMT_Configuration (void)
 	TIM_BaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_BaseInitStructure.TIM_RepetitionCounter = 0;
 	TIM_TimeBaseInit(TIM1, &TIM_BaseInitStructure);
-	//启用ARR的影子寄存器（直到产生更新事件才更改设置）
+	//鍚敤ARR镄勫奖瀛愬瘎瀛桦櫒锛堢洿鍒颁骇鐢熸洿鏂颁簨浠舵墠镟存敼璁剧疆锛?
 	TIM_ARRPreloadConfig(TIM1, ENABLE);	
 	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
     TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
@@ -135,13 +135,13 @@ void PWMT_Configuration (void)
     TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;
     TIM_OCInitStructure.TIM_Pulse = 5000;
     TIM_OC1Init(TIM1, &TIM_OCInitStructure);
-    //启用CCR1寄存器的影子寄存器（直到产生更新事件才更改设置）
+    //鍚敤CCR1瀵勫瓨鍣ㄧ殑褰卞瓙瀵勫瓨鍣纸鐩村埌浜х敓镟存柊浜嬩欢镓嶆洿鏀硅缃级
     TIM_OC1PreloadConfig(TIM1, TIM_OCPreload_Enable);
-	//TIM1开启
+	//TIM1寮€鍚?
     TIM_Cmd(TIM1, ENABLE);
 	TIM_CtrlPWMOutputs(TIM1, ENABLE);
 }
-/* 过温和过流保护初始化 */
+/* 杩囨俯鍜岃绷娴佷缭鎶ゅ垵濮嫔寲 */
 void OVETI_Configuration (void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -162,12 +162,12 @@ void OVETI_Configuration (void)
 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
 	EXTI_Init(&EXTI_InitStructure);	
 }
-/* 频率计算: 72000000.0/500(分频值 499+1)/value */
+/* 棰戠巼璁＄畻: 72000000.0/500(鍒嗛链?499+1)/value */
 uint16_t HN220V_GetInputValue (void)
 {
 	return TIM_GetCapture1 (TIM4);
 }
-/* 工频频率测量 */
+/* 宸ラ棰戠巼娴嬮噺 */
 void HN220V_Configuration(void)
 {
 	TIM_ICInitTypeDef TIM_ICInitStructure;
@@ -182,11 +182,11 @@ void HN220V_Configuration(void)
 	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IN_FLOATING; 
 	GPIO_Init(GPIOD,&GPIO_InitStructure);
 	GPIO_PinRemapConfig(GPIO_Remap_TIM4,ENABLE);
- 	TIM_TimeBaseStructure.TIM_Period = 0xffff;		//周期0～FFFF
- 	TIM_TimeBaseStructure.TIM_Prescaler = 29;		//时钟分频 29+1
- 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;	//时钟分割
- 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//模式
- 	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseStructure);	//基本初始化	
+ 	TIM_TimeBaseStructure.TIM_Period = 0xffff;		//锻ㄦ湡0锝濬FFF
+ 	TIM_TimeBaseStructure.TIM_Prescaler = 29;		//镞堕挓鍒嗛 29+1
+ 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;	//镞堕挓鍒嗗壊
+ 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//妯″纺
+ 	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseStructure);	//鍩烘湰鍒濆鍖?
 	
 	TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;
 	TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;

@@ -1,4 +1,4 @@
-/*********************************************************************
+﻿/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -42,7 +42,7 @@ Purpose     : Example demonstrating the LISTBOX widget
 ********************************************************************
 */
 static const GUI_ConstString _ListBox[] = {
-  "English", "Deutsch", "Fran�ais", "Japanese", "Italiano", NULL
+  "English", "Deutsch", "Fran鏰is", "Japanese", "Italiano", NULL
 };
 
 /*******************************************************************

@@ -1,4 +1,4 @@
-/*********************************************************************
+ï»¿/*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
@@ -63,7 +63,7 @@ extern GUI_CONST_STORAGE GUI_FONT GUI_Fontweiruanyahei20;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "Window", ID_WINDOW_0, 0, 0, 240, 128, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "ÓÍÑù", ID_BUTTON_0, 80, 5, 96, 24, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "æ²¹æ ·", ID_BUTTON_0, 80, 5, 96, 24, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "2014-03-19 12:00", ID_TEXT_0, 148, 113, 92, 14, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "Data", ID_BUTTON_1, 80, 34, 96, 24, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "Settime", ID_BUTTON_2, 80, 63, 96, 24, 0, 0x0, 0 },

@@ -1,4 +1,4 @@
-#ifndef __BSP_USART_H__
+﻿#ifndef __BSP_USART_H__
 #define __BSP_USART_H__
 
 #ifndef __BSP_USART_C__

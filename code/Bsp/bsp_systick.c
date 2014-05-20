@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: bsp_systick.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -30,6 +30,14 @@ void SYSTICK_Configuration (void)
 		printf("\r\nsystick fail");
 		while(1);
 	}	
+}
+void SYSTICK_IntDisable(void)
+{
+	SysTick->CTRL &=(~SysTick_CTRL_TICKINT_Msk);
+}
+void SYSTICK_IntEnable(void)
+{
+	SysTick->CTRL |=(SysTick_CTRL_TICKINT_Msk);
 }
 void SYSTICK_Delay10ms(long i)
 {

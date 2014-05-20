@@ -1,4 +1,4 @@
-/*********************************************************************
+﻿/*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
@@ -71,16 +71,16 @@ extern GUI_CONST_STORAGE GUI_FONT GUI_Fontweiruanyahei20;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "historydataWindow", ID_WINDOW_0, 0, 0, 240, 128, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "上一个", ID_BUTTON_0, 190, 15, 48, 32, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "下一个", ID_BUTTON_1, 190, 55, 48, 32, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "涓娄竴涓?, ID_BUTTON_0, 190, 15, 48, 32, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "涓嬩竴涓?, ID_BUTTON_1, 190, 55, 48, 32, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "NO.00", ID_TEXT_0, 190, 95, 50, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "介 损 tgδ=", ID_TEXT_1, 5, 0, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "电  容  量=", ID_TEXT_2, 5, 16, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "交流  电压=", ID_TEXT_3, 5, 32, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "介电  常数=", ID_TEXT_4, 5, 48, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "直流  电压=", ID_TEXT_5, 5, 64, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "体积电阻率=", ID_TEXT_6, 5, 80, 88, 16, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "油      温=", ID_TEXT_7, 5, 96, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "浠?鎹?tg未=", ID_TEXT_1, 5, 0, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "鐢? 瀹? 閲?", ID_TEXT_2, 5, 16, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "浜ゆ祦  鐢靛帇=", ID_TEXT_3, 5, 32, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "浠嬬数  甯告暟=", ID_TEXT_4, 5, 48, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "鐩存祦  鐢靛帇=", ID_TEXT_5, 5, 64, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "浣撶Н鐢甸樆鐜?", ID_TEXT_6, 5, 80, 88, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "娌?     娓?", ID_TEXT_7, 5, 96, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_8, 96, 0, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_9, 96, 16, 88, 16, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_10, 96, 32, 88, 16, 0, 0x0, 0 },
@@ -164,7 +164,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by '上一个'
+    case ID_BUTTON_0: // Notifications sent by '涓娄竴涓?
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -178,7 +178,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_1: // Notifications sent by '下一个'
+    case ID_BUTTON_1: // Notifications sent by '涓嬩竴涓?
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)

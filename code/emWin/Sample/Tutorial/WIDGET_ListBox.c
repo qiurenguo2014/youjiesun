@@ -1,4 +1,4 @@
-/*********************************************************************
+Ôªø/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -75,13 +75,13 @@ static void _ShowSeveralFunctions(LISTBOX_Handle hListBox) {
   /* Add strings */
   GUI_DispStringAtCEOL("LISTBOX_AddString", 5, 55);
   GUI_Delay(SPEED);
-  LISTBOX_AddString(hListBox, "FranÁais");
+  LISTBOX_AddString(hListBox, "FranÈè∞is");
   GUI_Delay(SPEED / 6);
   LISTBOX_AddString(hListBox, "Japanese");
   GUI_Delay(SPEED / 6);
   LISTBOX_AddString(hListBox, "Italiano");
   GUI_Delay(SPEED / 6);
-  LISTBOX_AddString(hListBox, "EspaÒol");
+  LISTBOX_AddString(hListBox, "EspaÈßâl");
   GUI_Delay(SPEED / 6);
   LISTBOX_AddString(hListBox, "Other language ...");
   GUI_Delay(SPEED * 0.6);

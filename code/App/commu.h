@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: commu.h
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -29,17 +29,17 @@ ECAL_main,
 ERelay_main,
 }COM_CMD_TYPE;
 typedef enum{
-	QIZHI1,//起始发送 0XAA 0X55
+	QIZHI1,//璧峰鍙戦€?0XAA 0X55
 	QIZHI2,
 	MAINPCB,//
 	SLPCB,//
-	SIZE,//数据大小最小1
-	CMD,//这里开始计算数据大小
+	SIZE,//鏁版嵁澶у皬链€灏?
+	CMD,//杩欓噷寮€濮嬭绠楁暟鎹ぇ灏?
 	DATAS,//
-}COM_TYPE;//通信格式
+}COM_TYPE;//阃氢俊镙煎纺
 typedef struct{
-	uint32_t status;//状态
-	uint8_t count;//接收计数
+	uint32_t status;//钟舵€?
+	uint8_t count;//鎺ユ敹璁℃暟
 	uint8_t byte[0xff];
 }DATA_StructType;
 extern DATA_StructType recdata;

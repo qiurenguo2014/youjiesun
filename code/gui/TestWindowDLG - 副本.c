@@ -1,4 +1,4 @@
-/*********************************************************************
+﻿/*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
@@ -66,12 +66,12 @@ extern GUI_CONST_STORAGE GUI_FONT GUI_Fontkaiti16;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "TestWindow", ID_WINDOW_0, 0, 0, 240, 128, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "启动\n测试", ID_BUTTON_0, 160, 50, 60, 40, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "介质损耗", ID_BUTTON_1, 5, 5, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "交流频率", ID_BUTTON_2, 5, 30, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "体积电阻", ID_BUTTON_3, 5, 55, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "加热启动", ID_BUTTON_4, 5, 80, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "测试方式", ID_BUTTON_5, 5, 105, 80, 20, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "鍚姩\n娴嬭瘯", ID_BUTTON_0, 160, 50, 60, 40, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "浠嬭川鎹熻€?, ID_BUTTON_1, 5, 5, 80, 20, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "浜ゆ祦棰戠巼", ID_BUTTON_2, 5, 30, 80, 20, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "浣撶Н鐢甸樆", ID_BUTTON_3, 5, 55, 80, 20, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "锷犵儹鍚姩", ID_BUTTON_4, 5, 80, 80, 20, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "娴嬭瘯鏂瑰纺", ID_BUTTON_5, 5, 105, 80, 20, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_0, 90, 5, 40, 20, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_1, 90, 30, 120, 20, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_2, 90, 55, 40, 20, 0, 0x0, 0 },
@@ -109,7 +109,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by '启动测试'
+    case ID_BUTTON_0: // Notifications sent by '鍚姩娴嬭瘯'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -123,7 +123,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_1: // Notifications sent by '介质损耗'
+    case ID_BUTTON_1: // Notifications sent by '浠嬭川鎹熻€?
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -137,7 +137,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_2: // Notifications sent by '交流频率'
+    case ID_BUTTON_2: // Notifications sent by '浜ゆ祦棰戠巼'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -151,7 +151,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_3: // Notifications sent by '体积电阻'
+    case ID_BUTTON_3: // Notifications sent by '浣撶Н鐢甸樆'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -165,7 +165,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_4: // Notifications sent by '加热启动'
+    case ID_BUTTON_4: // Notifications sent by '锷犵儹鍚姩'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -179,7 +179,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_5: // Notifications sent by '测试方式'
+    case ID_BUTTON_5: // Notifications sent by '娴嬭瘯鏂瑰纺'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)

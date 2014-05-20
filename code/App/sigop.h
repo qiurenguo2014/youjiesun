@@ -1,4 +1,4 @@
-/*************************************************************************
+ï»¿/*************************************************************************
 #    FileName: SIGOP.H
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -14,18 +14,18 @@
 #include <stdint.h>
 /* Exported types ------------------------------------------------------*/
 typedef struct{
-	double tgc;//½éËğ
-	double Cx;//µçÈİÁ¿
-	double Uac;//½»Á÷µçÑ¹
-	double Er;//½éÖÊ³£Êı
-	double Udc;//Ö±Á÷µçÑ¹
-	double Rp;//Ìå»ıµç×èÂÊ
-	double T_oil;//ÓÍÎÂ
-}SIGOP_DataStructType;//²âÁ¿Êı¾İ½á¹û
+	double tgc;//ä»‹æŸ
+	double Cx;//ç”µå®¹é‡
+	double Uac;//äº¤æµç”µå‹
+	double Er;//ä»‹è´¨å¸¸æ•°
+	double Udc;//ç›´æµç”µå‹
+	double Rp;//ä½“ç§¯ç”µé˜»ç‡
+	double T_oil;//æ²¹æ¸©
+}SIGOP_DataStructType;//æµ‹é‡æ•°æ®ç»“æœ
 typedef struct{
 	SIGOP_DataStructType data;
-	float prefre;//µ±Ç°DAÊä³öµÄÆµÂÊ
-	float preacvol;//µ±Ç°DAÊä³öµÄ·ùÖµ
+	float prefre;//å½“å‰DAè¾“å‡ºçš„é¢‘ç‡
+	float preacvol;//å½“å‰DAè¾“å‡ºçš„å¹…å€¼
 }SIGOP_StructType;
 extern SIGOP_StructType sig;
 /* Exported constants --------------------------------------------------*/

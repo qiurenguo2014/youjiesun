@@ -1,4 +1,4 @@
-
+ï»¿
 /*  -------------------------Includes-----------------------------------------*/
 #include "My_InitTask.h" 
 #include "..\drv\t6963\t6963.h"
@@ -14,7 +14,7 @@ void BSP_BeepConfiguration (void);
 void BSP_GndaskConfiguration(void);
 /*  -------------------------Functions-----------------------------------------*/
 
-/**** stm32µÄ³õÊ¼»¯¹¤×÷È«²¿ÔÚÕâÀïÍê³É  *****/
+/**** stm32çš„åˆå§‹åŒ–å·¥ä½œå…¨éƒ¨åœ¨è¿™é‡Œå®Œæˆ  *****/
 void My_InitTask(void)
 {
    /* Configure the system clocks */ 
@@ -22,20 +22,20 @@ void My_InitTask(void)
 	NVIC_Configuration ();	
 	/* PA09 PA10 UART1 */
 	USART_Configuration ();
-	/* PD8 9 ²É¼¯°åºÍÏÔÊ¾°åÍ¨ĞÅ*/
+	/* PD8 9 é‡‡é›†æ¿å’Œæ˜¾ç¤ºæ¿é€šä¿¡*/
 	UCOM_Configuration ();
 	SYSTICK_Configuration ();
 	/* shell port*/
 	SHL_Init ();
-	/*AC DCÊä³ö  PA5(DA)  PB13(VLOSE_IO) PB12(HDCOUT) */
+	/*AC DCè¾“å‡º  PA5(DA)  PB13(VLOSE_IO) PB12(HDCOUT) */
 	DA_Configuration ();
-	/* ÎÂ¶È²É¼¯³õÊ¼»¯ PA7(FREQ TIM3CH2) */
+	/* æ¸©åº¦é‡‡é›†åˆå§‹åŒ– PA7(FREQ TIM3CH2) */
 	PWM_Configuration ();
-	/* ÎÂ¶ÈÉı½µÖ¸Ê¾µÆ PB8.9(UP DOWN TEMP LED ¹Ø±Õ) PE9 pwm*/
+	/* æ¸©åº¦å‡é™æŒ‡ç¤ºç¯ PB8.9(UP DOWN TEMP LED å…³é—­) PE9 pwm*/
 	PWMT_Configuration ();
-	/* ¹¤ÆµÆµÂÊ²âÁ¿ PD12*/
+	/* å·¥é¢‘é¢‘ç‡æµ‹é‡ PD12*/
 	HN220V_Configuration ();
-	/* PB14 PD14 ¹ıÁ÷ ¹ıÎÂÅäÖÃ ¿ªÖĞ¶Ï*/
+	/* PB14 PD14 è¿‡æµ è¿‡æ¸©é…ç½® å¼€ä¸­æ–­*/
 	OVETI_Configuration ();
 	/* t6963 */
 	T6963_Configuration ();	
@@ -47,12 +47,12 @@ void My_InitTask(void)
 	FD_Init ();
 	/* relay */
 	RL_Configuration();
-	/* tda 7396 PE11 PD13 ¿ªPE11ÖĞ¶Ï*/
+	/* tda 7396 PE11 PD13 å¼€PE11ä¸­æ–­*/
 	TDA7396_Init ();
-	/*½ÓµØ¼ì²â³õÊ¼»¯*/
+	/*æ¥åœ°æ£€æµ‹åˆå§‹åŒ–*/
 	BSP_GndaskConfiguration ();
 }
-/* ½ÓµØ¼ì²â ¸ßµçÆ½Î´½ÓµØ */
+/* æ¥åœ°æ£€æµ‹ é«˜ç”µå¹³æœªæ¥åœ° */
 void BSP_GndaskConfiguration(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -125,7 +125,7 @@ void NVIC_Configuration(void)
 	/* Set the Vector Table base location at 0x08000000 */ 
 	NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x2000);   
 #endif
-	NVIC_SetPriorityGrouping (5);//ÇÀÕ¼Ê½ÓÅÏÈ¼¶(0~3),ÑÇÓÅÏÈ¼¶(0~3)
+	NVIC_SetPriorityGrouping (5);//æŠ¢å å¼ä¼˜å…ˆçº§(0~3),äºšä¼˜å…ˆçº§(0~3)
 	//NVIC_SetPriority(UART3_RX_TX_IRQn,NVIC_EncodePriority(5,1,2));
 	NVIC_SetPriority(SysTick_IRQn,NVIC_EncodePriority(5,1,3));
 	/* Configure one bit for preemption priority */
@@ -147,7 +147,7 @@ void NVIC_Configuration(void)
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
-	/* ²¶»ñ */
+	/* æ•è· */
 	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn; 
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;

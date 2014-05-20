@@ -1,4 +1,4 @@
-/*********************************************************************
+﻿/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -76,7 +76,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 *              Initializers for listbox
 */
 static const GUI_ConstString _apListBox[] = {
-  "English", "Deutsch", "Fran�ais", "Japanese", "Italiano", NULL
+  "English", "Deutsch", "Fran鏰is", "Japanese", "Italiano", NULL
 };
 
 /*******************************************************************

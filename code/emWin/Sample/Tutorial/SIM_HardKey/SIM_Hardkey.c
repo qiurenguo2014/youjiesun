@@ -1,4 +1,4 @@
-/*********************************************************************
+Ôªø/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -45,7 +45,7 @@ Purpose     : Example demonstrating the HARDKEY simulation
 */
 
 static const GUI_ConstString _aListBox[] = {
-  "English", "Deutsch", "FranÁais", "Japanese", "Italiano", "EspaÒol", NULL
+  "English", "Deutsch", "FranÈè∞is", "Japanese", "Italiano", "EspaÈßâl", NULL
 };
 static int _Ready;
 

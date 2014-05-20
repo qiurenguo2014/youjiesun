@@ -1,4 +1,4 @@
-/*************************************************************************
+ï»¿/*************************************************************************
 #    FileName: bsp_dac.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -126,7 +126,7 @@ const uint16_t Escalator12bit[DAC_SINNUM] =
 /* Functions prototypes ------------------------------------------------*/
 /* Functions -----------------------------------------------------------*/
 /*
-@brief  ¹Ø±ÕACÊä³ö.
+@brief  å…³é—­ACè¾“å‡º.
 @param  None.
 @retval None.
 */
@@ -135,7 +135,7 @@ void DA_StopACoutput (void)
 	DMA_Cmd(DMA2_Channel4, DISABLE);
 }
 /*
-@brief  ¿ªÆôACÊä³ö.
+@brief  å¼€å¯ACè¾“å‡º.
 @param  None.
 @retval None.
 */
@@ -171,7 +171,7 @@ void DA_CloseDCMODEL (void)
 	GPIO_WriteBit(HDC_12VOUT,HDC_12VOUT_Pin,Bit_SET);
 }
 /*
-@brief  ½»Á÷Ö±Á÷ÇĞ»»¿ª¹Ø BU508.
+@brief  äº¤æµç›´æµåˆ‡æ¢å¼€å…³ BU508.
 @param  None.
 @retval None.
 */
@@ -201,7 +201,7 @@ void DA_SetFre (float hz)
 	}else{
 		hzs = hz*2048.0;
 		val = 72000000/hzs;
-		TIM_SetAutoreload(TIM6, val);//(ÏÖÔÚÊä³ö25HZ,2048¸öµã)
+		TIM_SetAutoreload(TIM6, val);//(ç°åœ¨è¾“å‡º25HZ,2048ä¸ªç‚¹)
 	}	
 }
 void DA_SetAmp (float amp)
@@ -251,7 +251,7 @@ void DA_Configuration (void)
 	TIM_PrescalerConfig(TIM6, 0x0, TIM_PSCReloadMode_Update);
 	DA_SetFre (50);
 	DA_SetAmp (1);
-	//TIM_SetAutoreload(TIM6, 0x57e);//(ÏÖÔÚÊä³ö25HZ,2048¸öµã)  
+	//TIM_SetAutoreload(TIM6, 0x57e);//(ç°åœ¨è¾“å‡º25HZ,2048ä¸ªç‚¹)  
 	/* TIM6 TRGO selection */
 	TIM_SelectOutputTrigger(TIM6, TIM_TRGOSource_Update);
 	/* DAC channel1 Configuration */

@@ -1,4 +1,4 @@
-/*********************************************************************
+ï»¿/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -233,13 +233,13 @@ static const char * _aLang[][2] = {
   { "Korrektur",
     "Correction"
   },
-  { "Bestätigen",
+  { "Besté‹žigen",
     "Confirm"
   },
   { "Bitte geben Sie Ihre Geheimzahl ein:",
     "Please enter your PIN:"
   },
-  { "Bitte führen Sie Ihre Karte ein",
+  { "Bitte få…šren Sie Ihre Karte ein",
     "Please insert your card"
   },
   { "Geld abheben",
@@ -263,13 +263,13 @@ static const char * _aLang[][2] = {
   { "Bitte entnehmen Sie Ihr Geld",
     "Transaction completed.\nPlease take your money"
   },
-  { "Vielen Dank für\nIhren Besuch",
+  { "Vielen Dank fé»µ\nIhren Besuch",
     "Thank you for\nusing"
   },
   { "Geldautomat",
     "ATM"
   },
-  { "Ihr Saldo beträgt: 1234.56 EUR",
+  { "Ihr Saldo betré‹‘t: 1234.56 EUR",
     "Your balance amount is: -1234.56 EUR"
   },
   { "Bitte treffen Sie Ihre Auswahl",

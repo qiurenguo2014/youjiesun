@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: bsp_key.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -33,7 +33,7 @@ uint16_t KEY_Listen_allkey (void)
 	return data;
 }
 /*
-@brief  1 按下 0 没按.
+@brief  1 鎸変笅 0 娌℃寜.
 @param  None.
 @retval None.
 */
@@ -43,7 +43,7 @@ uint8_t KEY_Listen_DOWN (void)
 }
 
 /*
-@brief  1 按下 0 没按.
+@brief  1 鎸変笅 0 娌℃寜.
 @param  None.
 @retval None.
 */
@@ -52,7 +52,7 @@ uint8_t KEY_Listen_UP (void)
 	return GPIO_ReadInputDataBit (KEY_UP, KEY_UP_Pin);
 }
 /*
-@brief  1 按下 0 没按.
+@brief  1 鎸変笅 0 娌℃寜.
 @param  None.
 @retval None.
 */
@@ -61,7 +61,7 @@ uint8_t KEY_Listen_PAIYOU (void)
 	return GPIO_ReadInputDataBit (KEY_PAIYOU, KEY_PAIYOU_Pin);
 }
 /*
-@brief  1 按下 0 没按.
+@brief  1 鎸変笅 0 娌℃寜.
 @param  None.
 @retval None.
 */
@@ -70,7 +70,7 @@ uint8_t KEY_Listen_ENTER (void)
 	return GPIO_ReadInputDataBit (KEY_ENTER, KEY_ENTER_Pin);
 }
 /*
-@brief  1 按下 0 没按.
+@brief  1 鎸変笅 0 娌℃寜.
 @param  None.
 @retval None.
 */
@@ -95,7 +95,7 @@ uint8_t GUI_Get_Keymsg_a (void)
 	return vk_msg;
 }
 /*
-@brief  按键扫描 放在中断里最好 间隔10ms扫描一次.
+@brief  鎸夐敭镓弿 鏀惧湪涓柇閲屾渶濂?闂撮殧10ms镓弿涓€娆?
 @param  None.
 @retval None.
 */
@@ -120,7 +120,7 @@ void KEY_Listen_KEY (void)
 		delay_down ++;
 	}else{
 		delay_down = 0;
-		if (delay_limit_down > DELAY_VK1){				//ËÉ¿ªÅÐ¶Ï
+		if (delay_limit_down > DELAY_VK1){				//唇脡驴陋脜脨露睃
 //			if(delay_limit_down <= DELAY_VK1+DELAY_VK2){
 				KEY_Send_Keymsg(VK_DOWN|VK_LOOSE);
 //			}

@@ -1,4 +1,4 @@
-/*************************************************************************
+ï»¿/*************************************************************************
 #    FileName: fm31256.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -18,7 +18,7 @@
 /* Functions prototypes ------------------------------------------------*/
 /* Functions -----------------------------------------------------------*/
 /*
-@brief  Æô¶¯Õñµ´.
+@brief  å¯åŠ¨æŒ¯è¡.
 @param  None.
 @retval None.
 */
@@ -27,7 +27,7 @@ void FM31256_OSCEN (void)
 	I2C_WriteByte(REG_WRITE,CONTROL,0x0);
 }
 /*
-@brief  Í£Ö¹Õñµ´.
+@brief  åœæ­¢æŒ¯è¡.
 @param  None.
 @retval None.
 */
@@ -36,33 +36,33 @@ void FM31256_OSCDIS (void)
 	I2C_WriteByte(REG_WRITE,CONTROL,0x80);
 }
 /*
-@brief  »ñÈ¡Ê±¼ä BCDÂë.
+@brief  è·å–æ—¶é—´ BCDç .
 @param  None.
 @retval None.
 */
 void FM31256_GetTime (unsigned char *data)
 {
-	/* ¶ÁÊ±¼ä */
+	/* è¯»æ—¶é—´ */
 	I2C_WriteByte(REG_WRITE,FLAGS,1);
 	I2C_ReadSByte (REG_READ, SECONDS, data, 7);
-	/* ¶ÁÍêÒª»Ö¸´0 */
+	/* è¯»å®Œè¦æ¢å¤0 */
 	I2C_WriteByte(REG_WRITE,FLAGS,0);
 }
 /*
-@brief  ÉèÖÃÊ±¼ä.
+@brief  è®¾ç½®æ—¶é—´.
 @param  None.
 @retval None.
 */
 void FM31256_SetTime (unsigned char *data)
 {
-	/* ¶ÁÊ±¼ä */
+	/* è¯»æ—¶é—´ */
 	I2C_WriteByte(REG_WRITE,FLAGS,0x2);
 	I2C_WriteSByte (REG_WRITE, SECONDS, data, 7);
-	/* ¶ÁÍêÒª»Ö¸´0 */
+	/* è¯»å®Œè¦æ¢å¤0 */
 	I2C_WriteByte(REG_WRITE,FLAGS,0);
 }
 /*
-@brief  ¹Ø±ÕĞ´±£»¤.
+@brief  å…³é—­å†™ä¿æŠ¤.
 @param  None.
 @retval None.
 */

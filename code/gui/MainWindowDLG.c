@@ -67,8 +67,8 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { BUTTON_CreateIndirect, "油样测试", ID_BUTTON_0, 60, 5, 100, 24, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "历史数据", ID_BUTTON_1, 60, 30, 100, 24, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "调整时钟", ID_BUTTON_2, 60, 55, 100, 24, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "语    言", ID_BUTTON_3, 60, 80, 100, 24, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "2014-05-08 12:00", ID_TEXT_0, 140, 113, 100, 15, 0, 0x0, 0 },  
+  { BUTTON_CreateIndirect, "语言", ID_BUTTON_3, 60, 80, 100, 24, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "2014-05-08 12:00", ID_TEXT_0, 140, 113, 100, 15, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };
@@ -102,18 +102,16 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
   int     Id;
   // USER START (Optionally insert additional variables)
   // USER END
-  switch (pMsg->MsgId) {
-	  
+  switch (pMsg->MsgId) {	  
   case WM_INIT_DIALOG:
     //
     // Initialization of '2014-05-08 12:00'
     //
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
     TEXT_SetTextAlign(hItem, GUI_TA_RIGHT | GUI_TA_VCENTER);
-	hItem_Text_Time = hItem;//保存hitem 用于更新时间	
+	hItem_Text_Time = hItem;//淇濆瓨hitem 鐢ㄤ簬镟存柊镞堕棿	
     // USER START (Optionally insert additional code for further widget initialization)
-	//_cb_DialogInit(pMsg);
-	GUI_UC_SetEncodeUTF8();
+	//_cb_DialogInit(pMsg);	
 	hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_0);
     BUTTON_SetFont(hItem,&GUI_Fontweiruanyahei20);
 	hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_1);
@@ -128,7 +126,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by '启动测试'
+    case ID_BUTTON_0: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -144,7 +142,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_1: // Notifications sent by '历史数据'
+    case ID_BUTTON_1: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -160,7 +158,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_2: // Notifications sent by 'bbbb'
+    case ID_BUTTON_2: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -174,7 +172,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_3: // Notifications sent by 'bbbbb'
+    case ID_BUTTON_3: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -248,7 +246,7 @@ void TimeUpdata (void)
 	}
 	
 }
-//指向主窗体
+//鎸囧悜涓荤獥浣?
 void Mainwin_SetFocus (void)
 {	
 	WM_ShowWindow(_mainWin);	
@@ -257,35 +255,9 @@ void Mainwin_SetFocus (void)
 void MainTask (void)
 {
 	GUI_Init();
-	PROGBAR_SetDefaultSkin(PROGBAR_SKIN_FLEX); 
-	//WM_SetCreateFlags(WM_CF_MEMDEV);
-	//WM_SelectWindow(WM_HBKWIN);
-	//GUI_UC_SetEncodeUTF8();
-	//GUI_SetFont (&GUI_Fontweiruanyahei20);
-	//GUI_DispStringAt("油样", 20, 30);
-	//while(1);	
-	//_testWin = CreateTestWindow();
-	//_hisdataWin = CreatehistorydataWindow ();
+	//PROGBAR_SetDefaultSkin(PROGBAR_SKIN_FLEX);
+	GUI_UC_SetEncodeUTF8();
  	_mainWin = CreateMainWindow();	
- 	//WM_HideWindow(_testWin);
-	//WM_HideWindow(_hisdataWin);
-	//GUI_Exec ();
-//	while(1);
-// 	//WM_InvalidateWindow (_mainWin);
-//  	while(1)
-//  	{
-// // 		WM_ShowWindow(_mainWin);
-// // 		WM_HideWindow(_testFrame);
-// //  	GUI_Delay (100);
-// // 		WM_HideWindow(_mainWin);
-// // 		WM_ShowWindow(_testFrame);
-// 		GUI_Delay (10);
-//  	}
-// 	GUI_ExecDialogBox(_aDialogCreate, GUI_COUNTOF(_aDialogCreate), &_cbDialog, 0, 0, 0);
-// 	while(1){
-// 		printf("\r\ndelay");
-// 		GUI_Delay (10);
-// 	}
 }
 // USER END
 

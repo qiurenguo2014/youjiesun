@@ -1,4 +1,4 @@
-/*************************************************************************
+ï»¿/*************************************************************************
 #    FileName: chshell_port.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -8,7 +8,7 @@
 *************************************************************************/
 /* Includes ------------------------------------------------------------*/
 #include <stdio.h>
-//ÕâÀï°üº¬ÄãµÄ´®¿ÚÇı¶¯Í·ÎÄ¼ş
+//è¿™é‡ŒåŒ…å«ä½ çš„ä¸²å£é©±åŠ¨å¤´æ–‡ä»¶
 #include "E:\MyFunc\shell\shell.h"
 /* Types ---------------------------------------------------------------*/
 /* Constants -----------------------------------------------------------*/
@@ -25,16 +25,16 @@ struct UARTSHELL_DEV SHL_Dev;
   */
 u8 SHL_TestFun(u8 *str1, u8 num1, u8 *str2, u8 num2, u8 *str3)
 {
-	printf("½øÈëTestFunº¯Êı\r\n");
-	printf("²ÎÊı1: %s\r\n",str1);
-	printf("²ÎÊı2: %d\r\n",num1);
-	printf("²ÎÊı3: %s\r\n",str2);
-	printf("²ÎÊı4: %d\r\n",num2);
-	printf("²ÎÊı5: %s\r\n",str3);
+	printf("è¿›å…¥TestFunå‡½æ•°\r\n");
+	printf("å‚æ•°1: %s\r\n",str1);
+	printf("å‚æ•°2: %d\r\n",num1);
+	printf("å‚æ•°3: %s\r\n",str2);
+	printf("å‚æ•°4: %d\r\n",num2);
+	printf("å‚æ•°5: %s\r\n",str3);
 	return 100;
 }
 /**
-  * @brief  º¯Êı¹ÜÀí´°¿Ú.
+  * @brief  å‡½æ•°ç®¡ç†çª—å£.
   * @param  None.
   * @retval None.
   * @verify .
@@ -73,7 +73,7 @@ void setamp(uint32_t amp)
 const struct UARTSHELL_FunTab SHL_FunTab[]=
 {
 	(u32*) SHL_TestFun,"u8 SHL_TestFun(u8* str1,u8 num1,u8* str2,u8 num2,u8* str3)",
-	(void*) FD_SetHistoryData, "void fdsh(void) ±£´æÀúÊ·²âÁ¿²ÎÊı",
+	(void*) FD_SetHistoryData, "void fdsh(void) ä¿å­˜å†å²æµ‹é‡å‚æ•°",
 	(void*) FD_GetHistoryData, "void fdgh(void)",
 	(void*) FD_Inc_jiezhisunhao, "void fdinc(void)",
 	(void*) _fd_printfhisdata, "void fdpr(void)",
@@ -98,7 +98,7 @@ const struct UARTSHELL_FunTab SHL_FunTab[]=
 	(uint8_t*) SIGOP_EmptyExit,"u8 emptyexit(void)",
 };	
 /**
-  * @brief  SHELL×é¼ş³õÊ¼»¯.
+  * @brief  SHELLç»„ä»¶åˆå§‹åŒ–.
   * @param  None.
   * @retval None.
   * @verify .
@@ -106,7 +106,7 @@ const struct UARTSHELL_FunTab SHL_FunTab[]=
 extern void Bsp_SystemReset (void);
 void SHL_Init(void)
 {
-	//UART_Init(UART3,115200l); //³õÊ¼»¯µ÷ÊÔ´®¿Ú //Ä¬ÈÏ UART3 115200 ÔÚUART.HÖĞ¶¨Òå
+	//UART_Init(UART3,115200l); //åˆå§‹åŒ–è°ƒè¯•ä¸²å£ //é»˜è®¤ UART3 115200 åœ¨UART.Hä¸­å®šä¹‰
 	SHL_Dev.cnum = 0;
 	SHL_Dev.funs = SHL_FunTab;
 	SHL_Dev.USART_STAT = 0;

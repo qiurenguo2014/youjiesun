@@ -1,4 +1,4 @@
-/*************************************************************************
+ï»¿/*************************************************************************
 #    FileName: bsp_key.h
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -16,13 +16,13 @@
 /* Exported constants --------------------------------------------------*/
 /* Exported define -----------------------------------------------------*/
 #define DELAY_VK1 2			//
-#define DELAY_VK2 50		//Á¬°´
-#define DELAY_VK3 15		//¼ÌĞøÁ¬°´
+#define DELAY_VK2 50		//è¿æŒ‰
+#define DELAY_VK3 15		//ç»§ç»­è¿æŒ‰
 
 /* Function Key Code Table -------------------------------------*/
 #define VK_NOKEY		0
-#define VK_LOOSE		0X80//ËÉ¿ª
-#define VK_CONT			0x40//Á¬Ğø
+#define VK_LOOSE		0X80//æ¾å¼€
+#define VK_CONT			0x40//è¿ç»­
 #define VK_LBUTTON     0X01	//
 #define VK_RBUTTON     0X02	//
 #define VK_CANCEL      0X03	//

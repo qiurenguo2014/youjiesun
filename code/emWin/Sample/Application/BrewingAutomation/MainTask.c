@@ -1,4 +1,4 @@
-/*********************************************************************
+ï»¿/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -431,8 +431,8 @@ static void _MashingDetail(MashingState * pState) {
   GUI_SetColor(0x9c4a31);
   GUI_DispDecAt(_iWort,        261, 54, 2);
   GUI_DispDecAt(_iTemperature, 261, 78, 2);
-  GUI_DispStringAt("°P", 285, 54);
-  GUI_DispStringAt("°C", 285, 78);
+  GUI_DispStringAt("ç™™", 285, 54);
+  GUI_DispStringAt("ç™ˆ", 285, 78);
 }
 
 /*********************************************************************

@@ -1,4 +1,4 @@
-/*********************************************************************
+Ôªø/*********************************************************************
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
@@ -68,10 +68,10 @@ static void _ShowSeveralFunctions(DROPDOWN_Handle hDropDown) {
   GUI_Delay(SPEED * 0.8);
   DROPDOWN_AddString(hDropDown, "English");
   DROPDOWN_AddString(hDropDown, "Deutsch");
-  DROPDOWN_AddString(hDropDown, "FranÁais");
+  DROPDOWN_AddString(hDropDown, "FranÈè∞is");
   DROPDOWN_AddString(hDropDown, "Japanese");
   DROPDOWN_AddString(hDropDown, "Italiano");
-  DROPDOWN_AddString(hDropDown, "EspaÒol");
+  DROPDOWN_AddString(hDropDown, "EspaÈßâl");
   DROPDOWN_AddString(hDropDown, "Other language ...");
   GUI_Delay(SPEED * 0.6);
   /* Increment selection */

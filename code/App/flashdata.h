@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: flashdata.h
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -15,25 +15,25 @@
 /* Exported types ------------------------------------------------------*/
 /* Exported constants --------------------------------------------------*/
 /* Exported define -----------------------------------------------------*/
-#define FLASH_ADDREND 32*1024 //最后一个地址 不能等于它
+#define FLASH_ADDREND 32*1024 //链€鍚庝竴涓湴鍧€ 涓嶈兘绛変簬瀹?
 #define FLASH_SIZE 32*1024
-/* 修正数据存在参数设置数据后面 */
-#define FLASH_ADDR_SYSTEST 31*1024 //系统数据起始
-									//0 介质损耗
-									//1 交流频率
-									//2 体积电阻
-									//3 加热启动
-									//4 测试方式
-									//5 空杯电容
+/* 淇鏁版嵁瀛桦湪鍙傛暟璁剧疆鏁版嵁鍚庨溃 */
+#define FLASH_ADDR_SYSTEST 31*1024 //绯荤粺鏁版嵁璧峰
+									//0 浠嬭川鎹熻€?
+									//1 浜ゆ祦棰戠巼
+									//2 浣撶Н鐢甸樆
+									//3 锷犵儹鍚姩
+									//4 娴嬭瘯鏂瑰纺
+									//5 绌烘澂鐢靛
 /* Exported variables --------------------------------------------------*/
 typedef enum{
-	EAUTO_WORK,//自动
-	EHAND_WORK,//手动
-	ECOM_WORK,//通信
-	EEMPTY_WORK,//空杯
-	ERES_WORK,//电阻
+	EAUTO_WORK,//镊姩
+	EHAND_WORK,//镓嫔姩
+	ECOM_WORK,//阃氢俊
+	EEMPTY_WORK,//绌烘澂
+	ERES_WORK,//鐢甸樆
 	EEND_WORK,
-}CESHIFANGSI_ENUM;//测试方式
+}CESHIFANGSI_ENUM;//娴嬭瘯鏂瑰纺
 typedef enum{
 	FRE_50HZ,
 	FRE_475_525HZ,
@@ -96,18 +96,18 @@ typedef enum{
 	DC_600V,
 	DC_END,
 }TIJIDIANZU_ENUM;
-/*历史参数设置参数*/
+/*铡嗗彶鍙傛暟璁剧疆鍙傛暟*/
 typedef struct{
-	volatile int32_t jiezhisunhao;//关 600-2000V
+	volatile int32_t jiezhisunhao;//鍏?600-2000V
 	volatile int32_t jiaoliupinlv;//50hz 47.5/52.5hz 45/55 60 57.5/62.5 55/65
-	volatile int32_t tijidianzu;//关 300V 400 500 600
-	volatile int32_t jiareqidong;//关 50-130 （5度的加）
-	volatile int32_t ceshifangsi;//自动 手动 通信 空杯 电阻
-	volatile int32_t kongbeidianrong;//空杯电容 //*100
+	volatile int32_t tijidianzu;//鍏?300V 400 500 600
+	volatile int32_t jiareqidong;//鍏?50-130 锛?搴︾殑锷狅级
+	volatile int32_t ceshifangsi;//镊姩 镓嫔姩 阃氢俊 绌烘澂 鐢甸樆
+	volatile int32_t kongbeidianrong;//绌烘澂鐢靛 //*100
 }HISTORYTEST;
 extern HISTORYTEST hisdata;
 typedef struct{
-	volatile float ac_k;//交流输出系数 变压器输出电压 1000V = setamp(1000/2500*ac_k);
+	volatile float ac_k;//浜ゆ祦杈揿嚭绯绘暟 鍙桦帇鍣ㄨ緭鍑虹数铡?1000V = setamp(1000/2500*ac_k);
 }MODIFY_StructType;
 extern MODIFY_StructType modify;
 /* Exported functions prototypes ---------------------------------------*/

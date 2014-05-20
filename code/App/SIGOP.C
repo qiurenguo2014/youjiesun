@@ -3,7 +3,7 @@
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
 #    HomePage: Allen
-#       Brief: 信号输出控制 交流信号控制和直流信号控制
+#       Brief: 淇″佛杈揿嚭鎺у埗 浜ゆ祦淇″佛鎺у埗鍜岀洿娴佷俊鍙锋带鍒?
 #  LastChange: 2014-05-13 10:50:52
 *************************************************************************/
 /* Includes ------------------------------------------------------------*/
@@ -24,7 +24,7 @@ SIGOP_StructType sig;
 /* Functions prototypes ------------------------------------------------*/
 /* Functions -----------------------------------------------------------*/
 /*
-@brief  切换到AC模式 DC模块断电 切运放继电器 BU508导通 TDA工作 HAC继电器.
+@brief  鍒囨崲鍒痨C妯″纺 DC妯″潡鏂数 鍒囱繍鏀剧户鐢靛櫒 BU508瀵奸€?TDA宸ヤ綔 HAC缁х数鍣?
 @param  None.
 @retval None.
 */
@@ -44,7 +44,7 @@ void SIGOP_SwACmodelExit(void)
 	RL_nActive_HACRELAY ();	
 }
 /*
-@brief  根据设置的参数设置频率 1
+@brief  频率分两次
 @param  None.
 @retval None.
 */
@@ -111,8 +111,7 @@ void SIGOP_SetFre2(void)
 	}
 }
 /*
-@brief  设置变压器输出级电压
-		电压是缓慢上升到额定值
+@brief  设置输出电压
 @param  None.
 @retval None.
 */
@@ -257,12 +256,17 @@ uint8_t SIGOP_ComTest(void)
 @param  None.
 @retval None.
 */
+extern void TestWin_SetProgbar(int v);
 uint8_t SIGOP_EmptyTest(void)
 {
-	printf("\r\nkongbeiceliang");	
+	printf("\r\nkongbeiceliang");
+	TestWin_SetProgbar (10);
 	SIGOP_SwACmodel ();
-	SIGOP_SetFre1 ();//第一次频率设定
-	SIGOP_SetAmp ();//输出
+	TestWin_SetProgbar (20);
+	SIGOP_SetFre1 ();
+	TestWin_SetProgbar (50);
+	SIGOP_SetAmp ();
+	TestWin_SetProgbar (100);
 	return 0;
 }
 /*退出空杯测量*/

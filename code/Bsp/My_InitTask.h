@@ -1,4 +1,4 @@
-#ifndef MY_INITTASK_H
+﻿#ifndef MY_INITTASK_H
 #define MY_INITTASK_H
 
 #include "stm32f10x.h"

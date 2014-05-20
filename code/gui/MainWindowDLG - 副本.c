@@ -1,4 +1,4 @@
-/*********************************************************************
+﻿/*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
@@ -64,10 +64,10 @@ WM_HWIN        _hisdataWin;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "MainWindow", ID_WINDOW_0, 0, 0, 240, 128, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "油样测试", ID_BUTTON_0, 60, 5, 100, 24, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "历史数据", ID_BUTTON_1, 60, 30, 100, 24, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "调整时钟", ID_BUTTON_2, 60, 55, 100, 24, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "语    言", ID_BUTTON_3, 60, 80, 100, 24, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "娌规牱娴嬭瘯", ID_BUTTON_0, 60, 5, 100, 24, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "铡嗗彶鏁版嵁", ID_BUTTON_1, 60, 30, 100, 24, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "璋冩暣镞堕挓", ID_BUTTON_2, 60, 55, 100, 24, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "璇?   瑷€", ID_BUTTON_3, 60, 80, 100, 24, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "2014-05-08 12:00", ID_TEXT_0, 140, 113, 100, 15, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
@@ -110,7 +110,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     //
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
     TEXT_SetTextAlign(hItem, GUI_TA_RIGHT | GUI_TA_VCENTER);
-	hItem_Text_Time = hItem;//保存hitem 用于更新时间
+	hItem_Text_Time = hItem;//淇濆瓨hitem 鐢ㄤ簬镟存柊镞堕棿
 	//TEXT_SetText (hItem, "123456789");
     // USER START (Optionally insert additional code for further widget initialization)
 	//_cb_DialogInit(pMsg);
@@ -255,7 +255,7 @@ void TimeUpdata (void)
 	}
 	
 }
-//指向主窗体
+//鎸囧悜涓荤獥浣?
 void Mainwin_SetFocus (void)
 {	
 	WM_ShowWindow(_mainWin);	
@@ -268,7 +268,7 @@ void MainTask (void)
 	//WM_SelectWindow(WM_HBKWIN);
 	//GUI_UC_SetEncodeUTF8();
 	//GUI_SetFont (&GUI_Fontweiruanyahei20);
-	//GUI_DispStringAt("油样", 20, 30);
+	//GUI_DispStringAt("娌规牱", 20, 30);
 	//while(1);	
 	_testWin = CreateTestWindow();
 	_hisdataWin = CreatehistorydataWindow ();

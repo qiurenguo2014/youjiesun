@@ -43,8 +43,10 @@
 #define ID_TEXT_3  (GUI_ID_USER + 0x3E)
 #define ID_TEXT_4  (GUI_ID_USER + 0x3F)
 #define ID_TEXT_5  (GUI_ID_USER + 0x40)
-#define ID_TEXT_6  (GUI_ID_USER + 0x07)
+#define ID_TEXT_6  (GUI_ID_USER + 0x41)
 
+#define ID_TEXT_7 (GUI_ID_USER + 0x43)
+#define ID_PROGBAR_0 (GUI_ID_USER + 0x44)
 // USER START (Optionally insert additional defines)
 extern GUI_CONST_STORAGE GUI_FONT GUI_Fontweiruanyahei20;
 extern GUI_CONST_STORAGE GUI_FONT GUI_Fontkaiti16;
@@ -66,7 +68,7 @@ extern GUI_CONST_STORAGE GUI_FONT GUI_Fontkaiti16;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "TestWindow", ID_WINDOW_0, 0, 0, 240, 128, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "启动\n测试", ID_BUTTON_0, 160, 50, 60, 40, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "启动测试", ID_BUTTON_0, 160, 50, 60, 40, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "介质损耗", ID_BUTTON_1, 5, 5, 80, 20, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "交流频率", ID_BUTTON_2, 5, 30, 80, 20, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "体积电阻", ID_BUTTON_3, 5, 55, 80, 20, 0, 0x0, 0 },
@@ -79,6 +81,8 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { TEXT_CreateIndirect, "Text", ID_TEXT_4, 90, 105, 40, 20, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Text", ID_TEXT_5, 140, 96, 100, 32, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "长按3秒测试", ID_TEXT_6, 144, 0, 128, 16, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "Text", ID_TEXT_7, 5+65, 30+36, 100, 32, 0, 0x0, 0 },
+  { PROGBAR_CreateIndirect, "Progbar", ID_PROGBAR_0, 5+65, 5+36, 100, 20, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };
@@ -91,10 +95,28 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 */
 
 // USER START (Optionally insert additional static code)
-#define WM_NOTIFICATION_TEST3S WM_NOTIFICATION_USER+0x01 //启动测试
+#define WM_NOTIFICATION_TEST3S WM_NOTIFICATION_USER+0x01 //鍚姩娴嬭瘯
 int TestWin_GetTestNotifi (void)
 {
 	return WM_NOTIFICATION_TEST3S;
+}
+WM_HWIN hItem_pg;
+void TestWin_SetProgbar(int v)
+{
+	static int vb=0;
+	if(vb < v){
+		for(;vb<=v;vb++){
+			PROGBAR_SetValue (hItem_pg,vb);
+			WM_Exec();
+			T6963_ScreenUpdata ();
+		}
+	}else{
+		vb = v;
+		PROGBAR_SetValue (hItem_pg,vb);
+		WM_Exec();
+		T6963_ScreenUpdata ();
+	}	
+
 }
 // USER END
 
@@ -115,7 +137,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by '启动测试'
+    case ID_BUTTON_0: // Notifications sent by '鍚姩娴嬭瘯'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -127,13 +149,25 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
         break;
       // USER START (Optionally insert additional code for further notification handling)
       case WM_NOTIFICATION_TEST3S:
-		CreateprogbarWindow ();
+		hItem = WM_GetDialogItem(pMsg->hWin, ID_PROGBAR_0);
+		WM_ShowWindow (hItem);
+		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_7);
+		WM_ShowWindow (hItem);
+		GUI_ClearKeyBuffer ();
+		WM_Exec();
+		T6963_ScreenUpdata ();
 		SIGOP_StartTest ();
+		hItem = WM_GetDialogItem(pMsg->hWin, ID_PROGBAR_0);
+		WM_HideWindow (hItem);
+		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_7);
+		WM_HideWindow (hItem);
+		WM_Exec();
+		T6963_ScreenUpdata ();
 		 break;
 	  // USER END
       }
       break;
-    case ID_BUTTON_1: // Notifications sent by '介质损耗'
+    case ID_BUTTON_1: // Notifications sent by '浠嬭川鎹熻€?
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -151,7 +185,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_2: // Notifications sent by '交流频率'
+    case ID_BUTTON_2: // Notifications sent by '浜ゆ祦棰戠巼'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -169,7 +203,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_3: // Notifications sent by '体积电阻'
+    case ID_BUTTON_3: // Notifications sent by '浣撶Н鐢甸樆'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -187,7 +221,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_4: // Notifications sent by '加热启动'
+    case ID_BUTTON_4: // Notifications sent by '锷犵儹鍚姩'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -205,7 +239,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_5: // Notifications sent by '测试方式'
+    case ID_BUTTON_5: // Notifications sent by '娴嬭瘯鏂瑰纺'
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -280,6 +314,12 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 		TEXT_SetText(hItem, str);
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_6);
 		TEXT_SetFont (hItem, &GUI_Fontkaiti16);
+		
+		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_7);
+		WM_HideWindow (hItem);
+		hItem = WM_GetDialogItem(pMsg->hWin, ID_PROGBAR_0);
+		hItem_pg = hItem;
+		WM_HideWindow (hItem);
     // USER END
     break;
 	case WM_KEY:

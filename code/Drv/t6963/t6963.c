@@ -1,8 +1,8 @@
-#define __BSP_T6963_C__
+ï»¿#define __BSP_T6963_C__
 #include "stm32f10x.h"
 #include "t6963.h" 
 
-unsigned char flag_updata=0;//0 ²»Ë¢ÐÂ 1Ë¢ÐÂ
+unsigned char flag_updata=0;//0 ä¸åˆ·æ–° 1åˆ·æ–°
 static void RCC_Configuration(void) ;
 static void GPIO_Configuration(void) ;
 unsigned char T6963_ReadData (int ctrl);
@@ -22,12 +22,12 @@ void T6963_SetDot (int X_coor, int Y_coor, int color)
 	u32 residue;
 	u8 dot = 0x80;
 	flag_updata = 1;
-	/* XÓÐ30¸ö×Ö½Ú Ã¿¸ö8 */
+	/* Xæœ‰30ä¸ªå­—èŠ‚ æ¯ä¸ª8 */
 	divisor = X_coor/8;
-	/* ÒÆÎ» */
+	/* ç§»ä½ */
 	residue = X_coor%8;
 	dot >>= residue;
-	/* µÚ¼¸ÐÐ+µÚ¼¸ÁÐ */
+	/* ç¬¬å‡ è¡Œ+ç¬¬å‡ åˆ— */
 	if(color == 0){
 		lcd.lcdBuffer[Y_coor*LCD_ROW_BYTES + divisor] |= dot;
 	}else{
@@ -62,7 +62,7 @@ void T6963_ScreenUpdata (void)
 #if T6963DEBUG
 	delay_T6963();
 #else
-	while ((T6963_ReadData(CTRL) & 0x08) == 0);//BUSY
+	while ((T6963_ReadData(CTRL) & 0x08) == 0){};//BUSY
 #endif
 			
 			LCD_BUS->BRR = LCD_BUS_PIN;
@@ -88,7 +88,7 @@ void T6963_ScreenUpdate(LCD_StructType *p)
 #if T6963DEBUG
 	delay_T6963();
 #else
-	while ((T6963_ReadData(CTRL) & 0x08) == 0);//BUSY
+	while ((T6963_ReadData(CTRL) & 0x08) == 0){};//BUSY
 #endif
 			
 			LCD_BUS->BRR = LCD_BUS_PIN;

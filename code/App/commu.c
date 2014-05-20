@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: commu.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -17,7 +17,7 @@ DATA_StructType senddata;
 /* Functions prototypes ------------------------------------------------*/
 /* Functions -----------------------------------------------------------*/
 /*
-@brief  通信初始化.
+@brief  阃氢俊鍒濆鍖?
 @param  None.
 @retval None.
 */
@@ -29,7 +29,7 @@ void CM_ClearCount (void)
 {
 	recdata.count = 0;
 }
-/* 解析报文 */
+/* 瑙ｆ瀽鎶ユ枃 */
 void CM_AnlyMsg (DATA_StructType *msg)
 {
 

@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 #    FileName: ad7705.c
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -78,7 +78,7 @@ unsigned char AD7705_ReadWriteData (unsigned char data)
 	return dat;
 }
 /*
-@brief  等待转换结束.
+@brief  绛夊緟杞崲缁撴潫.
 @param  None.
 @retval None.
 */
