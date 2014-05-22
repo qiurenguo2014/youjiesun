@@ -1,4 +1,4 @@
-﻿/*************************************************************************
+/*************************************************************************
 #    FileName: flashdata.h
 #      Author: Allen
 #       Email: qiurenguo@gmail.com
@@ -96,7 +96,7 @@ typedef enum{
 	DC_600V,
 	DC_END,
 }TIJIDIANZU_ENUM;
-/*铡嗗彶鍙傛暟璁剧疆鍙傛暟*/
+/* */
 typedef struct{
 	volatile int32_t jiezhisunhao;//鍏?600-2000V
 	volatile int32_t jiaoliupinlv;//50hz 47.5/52.5hz 45/55 60 57.5/62.5 55/65
@@ -107,7 +107,7 @@ typedef struct{
 }HISTORYTEST;
 extern HISTORYTEST hisdata;
 typedef struct{
-	volatile float ac_k;//浜ゆ祦杈揿嚭绯绘暟 鍙桦帇鍣ㄨ緭鍑虹数铡?1000V = setamp(1000/2500*ac_k);
+	volatile float ac_k;//产生的交流修正系数 1000V = setamp(1000/2500*ac_k);
 }MODIFY_StructType;
 extern MODIFY_StructType modify;
 /* Exported functions prototypes ---------------------------------------*/

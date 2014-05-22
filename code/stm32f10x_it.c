@@ -1,4 +1,4 @@
-﻿/**
+/**
   ******************************************************************************
   * @file    Project/STM32F10x_StdPeriph_Template/stm32f10x_it.c 
   * @author  MCD Application Team
@@ -164,6 +164,16 @@ void USART1_IRQHandler(void)
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 		ch = USART_ReceiveData (USART1);
 		SHL_ProcessCh(ch);
+	}
+}
+#include "app/commun.h"
+void USART3_IRQHandler(void)
+{
+	unsigned char ch;
+	if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET){
+		USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+		ch = USART_ReceiveData (USART3);
+		COM_ReceiveData(ch);
 	}
 }
 void EXTI15_10_IRQHandler(void)

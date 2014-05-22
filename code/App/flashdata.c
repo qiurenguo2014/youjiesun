@@ -320,16 +320,6 @@ void FD_GetHisdataStr_ceshifangsi (char *str)
 void FD_GetHisdataStr_kongbeidianrong (char *str)
 {
 	sprintf(str,"空杯电容 \n%5.2fpf",hisdata.kongbeidianrong/100.0);
-	//strcpy(str,"绌烘澂鐢靛 \n%fpf",hisdata.kongbeidianrong);
-// 	switch(hisdata.kongbeidianrong){
-// 		case 0:
-// 			strcpy(str,"绌烘澂鐢靛 \n120.85pf");
-// 			break;
-// 		default:
-// 			hisdata.kongbeidianrong = 0;
-// 			strcpy(str,"绌烘澂鐢靛 \n120.85pf"); 
-// 			break;
-// 	}
 }
 void FD_AdjustModifyData (void)
 {

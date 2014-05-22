@@ -413,9 +413,9 @@
               <FilePath>.\code\App\pid_temp.c</FilePath>
             </File>
             <File>
-              <FileName>commu.c</FileName>
+              <FileName>commun.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\code\App\commu.c</FilePath>
+              <FilePath>.\code\App\commun.c</FilePath>
             </File>
           </Files>
         </Group>

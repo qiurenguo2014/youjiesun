@@ -1,4 +1,4 @@
-﻿#define __BSP_USART_C__
+#define __BSP_USART_C__
 #include "stm32f10x.h"
 #include "bsp_usart.h"
 #include <stdio.h>
@@ -75,9 +75,16 @@ void UCOM_Configuration (void)
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
 	USART_Init(USART3, &USART_InitStructure);
-	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);//?a???D??
+	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
 	USART_Cmd(USART3, ENABLE);
 	USART_ClearFlag(USART3, USART_FLAG_TC);
+}
+void USART3_SendData(uint8_t ch)
+{
+	USART_SendData(USART3, (uint8_t) ch);
+	/* Loop until the end of transmission */
+	while (USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET)
+	{}
 }
 static void NVIC_Configuration(void)
 {

@@ -1,4 +1,4 @@
-﻿
+
 /*  -------------------------Includes-----------------------------------------*/
 #include "My_InitTask.h" 
 #include "..\drv\t6963\t6963.h"
@@ -38,9 +38,7 @@ void My_InitTask(void)
 	/* PB14 PD14 过流 过温配置 开中断*/
 	OVETI_Configuration ();
 	/* t6963 */
-	T6963_Configuration ();	
-	/* beep */
-	BSP_BeepConfiguration ();	
+	T6963_Configuration ();		
 	/* fm31256 */
 	I2C_Configuration ();
 	FM31256_Init ();
@@ -51,6 +49,11 @@ void My_InitTask(void)
 	TDA7396_Init ();
 	/*接地检测初始化*/
 	BSP_GndaskConfiguration ();
+	/* beep */
+	BSP_BeepConfiguration ();
+	BSP_BeepOpen ();
+	SYSTICK_Delay10ms(50);
+	BSP_BeepClose ();
 }
 /* 接地检测 高电平未接地 */
 void BSP_GndaskConfiguration(void)
@@ -136,7 +139,7 @@ void NVIC_Configuration(void)
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
-	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0 ;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -204,49 +207,4 @@ void RCC_Configuration(void)
     }
   }
 }
-
-
-
-
-// #include "core_cm3.h"
-// void SysTick_Configuration(void)
-// {
-//   /* Select AHB clock(HCLK) as SysTick clock source */
-//   SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);
-// 	SysTick->LOAD  = 72000000/1000;//CLOCKS_PER_SEC - 1;       /* set reload register */1ms
-// 	SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
-// 	SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
-// 				SysTick_CTRL_TICKINT_Msk   |
-// 				SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
-// 	//SysTick_Config (1000);
-
-// }
-// static __INLINE uint32_t SysTick_Config(uint32_t ticks)
-// { 
-//   if (ticks > SysTick_LOAD_RELOAD_Msk)  return (1);            /* Reload value impossible */
-//                                                                
-//   SysTick->LOAD  = (ticks & SysTick_LOAD_RELOAD_Msk) - 1;      /* set reload register */
-//   NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Cortex-M0 System Interrupts */
-//   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
-//   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk | 
-//                    SysTick_CTRL_TICKINT_Msk   | 
-//                    SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
-//   return (0);                                                  /* Function successful */
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

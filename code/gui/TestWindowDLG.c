@@ -20,6 +20,7 @@
 
 // USER START (Optionally insert additional includes)
 #include "..\app\flashdata.h"
+#include "..\app\commun.h"
 // USER END
 
 #include "DIALOG.h"
@@ -137,7 +138,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by '鍚姩娴嬭瘯'
+    case ID_BUTTON_0: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -157,6 +158,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 		WM_Exec();
 		T6963_ScreenUpdata ();
 		SIGOP_StartTest ();
+			
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_PROGBAR_0);
 		WM_HideWindow (hItem);
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_7);
@@ -167,7 +169,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 	  // USER END
       }
       break;
-    case ID_BUTTON_1: // Notifications sent by '浠嬭川鎹熻€?
+    case ID_BUTTON_1: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -185,7 +187,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_2: // Notifications sent by '浜ゆ祦棰戠巼'
+    case ID_BUTTON_2: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -203,7 +205,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_3: // Notifications sent by '浣撶Н鐢甸樆'
+    case ID_BUTTON_3: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -221,7 +223,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_4: // Notifications sent by '锷犵儹鍚姩'
+    case ID_BUTTON_4: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)
@@ -239,7 +241,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
       // USER END
       }
       break;
-    case ID_BUTTON_5: // Notifications sent by '娴嬭瘯鏂瑰纺'
+    case ID_BUTTON_5: // Notifications sent by 
       switch(NCode) {
       case WM_NOTIFICATION_CLICKED:
         // USER START (Optionally insert code for reacting on notification message)

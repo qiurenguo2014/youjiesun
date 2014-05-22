@@ -62,6 +62,7 @@
 
 /* user files  		*/
 #include "gui.h"
+#include "app\commun.h"
 #include "bsp\My_InitTask.h"
 #include "bsp\bsp_systick.h"
 #include "bsp\bsp_dac.h"
@@ -128,8 +129,9 @@ int main( void )
 {
 	uint8_t ch;
 	static long jif_time=0;
-	static long jif_exec;
+	static long jif_exec;	
 	My_InitTask();
+	COM_Init ();
 	MainTask ();
 	while(1){
 		if (GUI_Get_Keymsg_a()==VK_NOKEY){
@@ -147,7 +149,13 @@ int main( void )
 		}
 	}
 }
-
+#define DPRINTF_EN 1
+void DPrintf(const char *a,...)
+{
+#if DPRINTF_EN
+	printf(a);
+#endif
+}
 
 /*-----------------------------------------------------------*/
 #ifdef  USE_FULL_ASSERT
